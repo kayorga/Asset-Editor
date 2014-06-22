@@ -535,130 +535,150 @@ namespace Asset_Editor
         {
             if (e.KeyChar == (char)Keys.Return)
             {
-                int f = 1;
-                if (int.TryParse(textBox1.Text, out f))
-                {
-
-                    face.headWidth = f;
-                    drawFace(2);
-                    trackBar1.Value = (Math.Min(Math.Max(350, f), 450) - 350) / 10;
-                    trackBar27.Value = (Math.Min(Math.Max(350, f), 450) - 350) / 10;
-                }
-
-                if (int.TryParse(textBox2.Text, out f))
-                {
-                    face.headHeight = f;
-                    drawFace(2);
-                    trackBar14.Value = (Math.Min(Math.Max(380, f), 480) - 380) / 10;
-                    trackBar28.Value = (Math.Min(Math.Max(380, f), 480) - 380) / 10;
-                }
-
-                if (int.TryParse(textBox3.Text, out f))
-                {
-                    face.eyeHeight = f;
-                    drawFace(2);
-                    trackBar2.Value = (Math.Min(Math.Max(40, f), 90) - 40) / 5;
-                    trackBar26.Value = (Math.Min(Math.Max(40, f), 90) - 40) / 5;
-                }
-
-                if (int.TryParse(textBox4.Text, out f))
-                {
-                    face.eyeSize = f * .01f;
-                    drawFace(2);
-                    trackBar3.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
-                    trackBar25.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
-                }
-
-                if (int.TryParse(textBox5.Text, out f))
-                {
-                    face.eyeDist = f;
-                    drawFace(2);
-                    trackBar4.Value = (Math.Min(Math.Max(0, f), 20) - 0) / 2;
-                    trackBar24.Value = (Math.Min(Math.Max(0, f), 20) - 0) / 2;
-                }
-
-                if (int.TryParse(textBox6.Text, out f))
-                {
-                    face.noseHeight = f;
-                    drawFace(2);
-                    trackBar5.Value = (Math.Min(Math.Max(20, f), 50) - 20) / 3;
-                    trackBar23.Value = (Math.Min(Math.Max(20, f), 50) - 20) / 3;
-                }
-
-                if (int.TryParse(textBox7.Text, out f))
-                {
-                    face.noseSize = f * .01f;
-                    drawFace(2);
-                    trackBar6.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
-                    trackBar22.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
-                }
-
-                if (int.TryParse(textBox8.Text, out f))
-                {
-                    face.mouthHeight = f-140;
-                    drawFace(2);
-                    trackBar7.Value = (Math.Min(Math.Max(-70, f-140), -40) + 70) / 3;
-                    trackBar21.Value = (Math.Min(Math.Max(-70, f-140), -40) + 70) / 3;
-                }
-
-                if (int.TryParse(textBox9.Text, out f))
-                {
-                    face.mouthSize = f * .01f;
-                    drawFace(2);
-                    trackBar8.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
-                    trackBar20.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
-                }
-
-                if (int.TryParse(textBox10.Text, out f))
-                {
-                    f = Math.Min(Math.Max(0, f), 2);
-                    face.headType = f;
-                    drawFace(2);
-                    trackBar13.Value = f;
-                    trackBar15.Value = f;
-                    textBox10.Text = "" + f;
-                }
-
-                if (int.TryParse(textBox11.Text, out f))
-                {
-                    f = Math.Min(Math.Max(0, f), 2);
-                    face.hairType = f;
-                    drawFace(2);
-                    trackBar12.Value = f;
-                    trackBar17.Value = f;
-                    textBox11.Text = "" + f;
-                }
-
-                if (int.TryParse(textBox12.Text, out f))
-                {
-                    f = Math.Min(Math.Max(0, f), 2);
-                    face.eyeType = f;
-                    drawFace(2);
-                    trackBar11.Value = f;
-                    trackBar19.Value = f;
-                    textBox12.Text = "" + f;
-                }
-
-                if (int.TryParse(textBox13.Text, out f))
-                {
-                    f = Math.Min(Math.Max(0, f), 2);
-                    face.noseType = f;
-                    drawFace(2);
-                    trackBar10.Value = f;
-                    trackBar18.Value = f;
-                    textBox13.Text = "" + f;
-                }
-
-                if (int.TryParse(textBox14.Text, out f))
-                {
-                    f = Math.Min(Math.Max(0, f), 2);
-                    face.mouthType = f;
-                    drawFace(2);
-                    trackBar9.Value = f;
-                    trackBar16.Value = f;
-                    textBox14.Text = "" + f;
-                }
+                updateFaceFromTextBoxes();
             }
+        }
+
+        private void updateFaceFromTextBoxes()
+        {
+            int f = 1;
+            if (int.TryParse(textBox1.Text, out f))
+            {
+
+                face.headWidth = f;
+                trackBar1.Value = (Math.Min(Math.Max(350, f), 450) - 350) / 10;
+                trackBar27.Value = (Math.Min(Math.Max(350, f), 450) - 350) / 10;
+            }
+
+            if (int.TryParse(textBox2.Text, out f))
+            {
+                face.headHeight = f;
+                trackBar14.Value = (Math.Min(Math.Max(380, f), 480) - 380) / 10;
+                trackBar28.Value = (Math.Min(Math.Max(380, f), 480) - 380) / 10;
+            }
+
+            if (int.TryParse(textBox3.Text, out f))
+            {
+                face.eyeHeight = f;
+                trackBar2.Value = (Math.Min(Math.Max(40, f), 90) - 40) / 5;
+                trackBar26.Value = (Math.Min(Math.Max(40, f), 90) - 40) / 5;
+            }
+
+            if (int.TryParse(textBox4.Text, out f))
+            {
+                face.eyeSize = f * .01f;
+                trackBar3.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                trackBar25.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+            }
+
+            if (int.TryParse(textBox5.Text, out f))
+            {
+                face.eyeDist = f;
+                trackBar4.Value = (Math.Min(Math.Max(0, f), 20) - 0) / 2;
+                trackBar24.Value = (Math.Min(Math.Max(0, f), 20) - 0) / 2;
+            }
+
+            if (int.TryParse(textBox6.Text, out f))
+            {
+                face.noseHeight = f;
+                trackBar5.Value = (Math.Min(Math.Max(20, f), 50) - 20) / 3;
+                trackBar23.Value = (Math.Min(Math.Max(20, f), 50) - 20) / 3;
+            }
+
+            if (int.TryParse(textBox7.Text, out f))
+            {
+                face.noseSize = f * .01f;
+                trackBar6.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                trackBar22.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+            }
+
+            if (int.TryParse(textBox8.Text, out f))
+            {
+                face.mouthHeight = f - 140;
+                trackBar7.Value = (Math.Min(Math.Max(-70, f - 140), -40) + 70) / 3;
+                trackBar21.Value = (Math.Min(Math.Max(-70, f - 140), -40) + 70) / 3;
+            }
+
+            if (int.TryParse(textBox9.Text, out f))
+            {
+                face.mouthSize = f * .01f;
+                trackBar8.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                trackBar20.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+            }
+
+            if (int.TryParse(textBox10.Text, out f))
+            {
+                f = Math.Min(Math.Max(0, f), 2);
+                face.headType = f;
+                trackBar13.Value = f;
+                trackBar15.Value = f;
+                textBox10.Text = "" + f;
+            }
+
+            if (int.TryParse(textBox11.Text, out f))
+            {
+                f = Math.Min(Math.Max(0, f), 2);
+                face.hairType = f;
+                trackBar12.Value = f;
+                trackBar17.Value = f;
+                textBox11.Text = "" + f;
+            }
+
+            if (int.TryParse(textBox12.Text, out f))
+            {
+                f = Math.Min(Math.Max(0, f), 2);
+                face.eyeType = f;
+                trackBar11.Value = f;
+                trackBar19.Value = f;
+                textBox12.Text = "" + f;
+            }
+
+            if (int.TryParse(textBox13.Text, out f))
+            {
+                f = Math.Min(Math.Max(0, f), 2);
+                face.noseType = f;
+                trackBar10.Value = f;
+                trackBar18.Value = f;
+                textBox13.Text = "" + f;
+            }
+
+            if (int.TryParse(textBox14.Text, out f))
+            {
+                f = Math.Min(Math.Max(0, f), 2);
+                face.mouthType = f;
+                trackBar9.Value = f;
+                trackBar16.Value = f;
+                textBox14.Text = "" + f;
+            }
+            drawFace(tabControl1.SelectedIndex + 1);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            textBox1.Text = "" + r.Next(350, 450);
+            textBox2.Text = "" + r.Next(380, 480);
+            textBox3.Text = "" + r.Next(40, 90);
+            textBox4.Text = "" + r.Next(65, 115);
+            textBox5.Text = "" + r.Next(0, 20);
+            textBox6.Text = "" + r.Next(20, 50);
+            textBox7.Text = "" + r.Next(65, 115);
+            textBox8.Text = "" + r.Next(70, 100);
+            textBox9.Text = "" + r.Next(65, 115);
+
+            updateFaceFromTextBoxes();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            textBox10.Text = "" + r.Next(0, 3);
+            textBox11.Text = "" + r.Next(0, 3);
+            textBox12.Text = "" + r.Next(0, 3);
+            textBox13.Text = "" + r.Next(0, 3);
+            textBox14.Text = "" + r.Next(0, 3);
+
+            updateFaceFromTextBoxes();
         }
     }
 }
