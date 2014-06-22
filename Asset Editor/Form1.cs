@@ -78,6 +78,111 @@ namespace Asset_Editor
             }
         }
 
+        #region save and load
+        //export
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            switch (workMode)
+            {
+                case 0:
+                    MessageBox.Show("No asset to save!");
+                    return;
+                case 1:
+                    sfd.Filter = "Face file|*.face|Bitmap|*.bmp";
+                    break;
+                case 2:
+                    sfd.Filter = "Geom file|*.geom|Bitmap|*.bmp";
+                    break;
+            }
+            sfd.Title = "Export asset";
+            sfd.ShowDialog();
+
+            if (sfd.FileName != "")
+            {
+                try
+                {
+                    System.IO.FileStream fs =
+                       (System.IO.FileStream)sfd.OpenFile();
+
+                    switch (workMode)
+                    {
+                        case 1:
+                            switch (sfd.FilterIndex)
+                            {
+                                case 1:
+                                    BinaryFormatter bf = new BinaryFormatter();
+                                    bf.Serialize(fs, face);
+                                    fs.Close();
+                                    break;
+                                case 2:
+                                    PictureBox picBox = Controls.Find("pictureBox" + (tabControl1.SelectedIndex + 1), true).First() as PictureBox;
+                                    picBox.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Bmp);
+                                    fs.Close();
+                                    break;
+                            }
+                            break;
+
+                        case 2:
+
+                            break;
+                    }
+
+                    fs.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        //import
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Asset file|*.face;*.geom";
+            ofd.Title = "Import asset";
+            ofd.ShowDialog();
+
+            if (ofd.FileName != "")
+            {
+                try
+                {
+                    System.IO.FileStream fs =
+                       (System.IO.FileStream)ofd.OpenFile();
+
+                    switch (Path.GetExtension(ofd.FileName))
+                    {
+                        case ".face":
+                            BinaryFormatter bf = new BinaryFormatter();
+                            Face f = (Face)bf.Deserialize(fs);
+                            fs.Close();
+
+                            face = f;
+                            switchWorkMode(1);
+                            break;
+
+                        case ".geom":
+                            switchWorkMode(2);
+                            break;
+                    }
+
+                    fs.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        #endregion
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            drawFace(tabControl1.SelectedIndex + 1);
+        }
+
         private void switchWorkMode(int m)
         {
             switch (m)
@@ -244,6 +349,9 @@ namespace Asset_Editor
         #endregion
 
         #region geom editor
+        byte moveShape = 0;
+        Point lastMousePos;
+
         private void newGeom()
         {
             switchWorkMode(2);
@@ -251,109 +359,31 @@ namespace Asset_Editor
 
         #endregion
 
-        #region save and load
-        //export
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            switch (workMode)
+            if (moveShape == 1)
             {
-                case 0: 
-                    MessageBox.Show("No asset to save!");
-                    return;
-                case 1:
-                    sfd.Filter = "Face file|*.face|Bitmap|*.bmp";
-                    break;
-                case 2:
-                    sfd.Filter = "Geom file|*.geom|Bitmap|*.bmp";
-                    break;
-            }
-            sfd.Title = "Export asset";
-            sfd.ShowDialog();
-
-            if (sfd.FileName != "")
-            {
-                try
-                {
-                    System.IO.FileStream fs =
-                       (System.IO.FileStream)sfd.OpenFile();
-
-                    switch (workMode)
-                    {
-                        case 1:
-                            switch (sfd.FilterIndex)
-                            {
-                                case 1:
-                                    BinaryFormatter bf = new BinaryFormatter();
-                                    bf.Serialize(fs, face);
-                                    fs.Close();
-                                    break;
-                                case 2:
-                                    PictureBox picBox = Controls.Find("pictureBox" + (tabControl1.SelectedIndex + 1), true).First() as PictureBox;
-                                    picBox.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Bmp);
-                                    fs.Close();
-                                    break;
-                            }
-                            break;
-
-                        case 2:
-
-                            break;
-                    }
-
-                    fs.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                Point p = this.PointToScreen(e.Location);
+                pictureBox5.SetBounds(pictureBox5.Left + p.X - lastMousePos.X, pictureBox5.Top + p.Y - lastMousePos.Y, pictureBox5.Width, pictureBox5.Height);
+                lastMousePos = p;
+                //label29.Text = "" + p;
+                //label29.Update();
+                pictureBox5.Update();
             }
         }
 
-        //import
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void tabPage3_MouseDown(object sender, MouseEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Asset file|*.face;*.geom";
-            ofd.Title = "Import asset";
-            ofd.ShowDialog();
-
-            if (ofd.FileName != "")
+            if (pictureBox5.Bounds.Contains(e.Location))
             {
-                try
-                {
-                    System.IO.FileStream fs =
-                       (System.IO.FileStream)ofd.OpenFile();
-
-                    switch (Path.GetExtension(ofd.FileName))
-                    {
-                        case ".face":
-                            BinaryFormatter bf = new BinaryFormatter();
-                            Face f = (Face)bf.Deserialize(fs);
-                            fs.Close();
-
-                            face = f;
-                            switchWorkMode(1);
-                            break;
-
-                        case ".geom":
-                            switchWorkMode(2);
-                            break;
-                    }
-
-                    fs.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                moveShape = 1;
             }
         }
-        #endregion
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            drawFace(tabControl1.SelectedIndex + 1);
+            if (e.KeyCode == Keys.Enter)
+                label29.Text = "yo";
         }
 
     }

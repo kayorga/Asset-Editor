@@ -9,30 +9,23 @@ namespace Asset_Editor
     [Serializable()]
     class Face
     {
-        /*private ShapeObject head;
-        private ShapeObject leftEye;
-        private ShapeObject rightEye;
-        private ShapeObject nose;
-        private ShapeObject mouth;
-        private ShapeObject hair;*/
-
         //parameters
-        public int eyeHeight = 65;
-        public int eyeDist = 10;
-        public float eyeSize = 0.9f;
-        public int noseHeight = 35;
-        public float noseSize = 0.9f;
-        public int mouthHeight = -55;
-        public float mouthSize = 0.9f;
-        public int headWidth = 400;
-        public int headHeight = 430;
+        public int eyeHeight = 65;      //40..90
+        public int eyeDist = 10;        //0..20
+        public float eyeSize = 0.9f;    //0.65..1.15
+        public int noseHeight = 35;     //20..50
+        public float noseSize = 0.9f;   //0.65..1.15
+        public int mouthHeight = -55;   //-70..-40
+        public float mouthSize = 0.9f;  //0.65..1.15
+        public int headWidth = 400;     //350..450
+        public int headHeight = 430;    //380..480
         
         //shapes
-        public int eyeType;
-        public int noseType;
-        public int mouthType;
-        public int headType;
-        public int hairType;
+        public int eyeType;             //0..2
+        public int noseType;            //0..2
+        public int mouthType;           //0..2
+        public int headType;            //0..2
+        public int hairType;            //0..2
 
         public Face()
         {
