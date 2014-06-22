@@ -58,23 +58,18 @@ namespace Asset_Editor
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (unsavedChanges) 
-                return;
-            else
+            switch (toolStripComboBox1.SelectedIndex)
             {
-                switch (toolStripComboBox1.SelectedIndex)
-                {
-                    case 0:
-                        {
-                            newFace();
-                            break;
-                        }
-                    case 1:
-                        {
-                            newGeom();
-                            break;
-                        }
-                }
+                case 0:
+                    {
+                        newFace();
+                        break;
+                    }
+                case 1:
+                    {
+                        newGeom();
+                        break;
+                    }
             }
         }
 
@@ -164,6 +159,18 @@ namespace Asset_Editor
                             break;
 
                         case ".geom":
+                            pictureBox17.Visible = true;
+                            pictureBox19.Visible = true;
+                            pictureBox20.Visible = true;
+                            pictureBox21.Visible = true;
+                            pictureBox22.Visible = true;
+                            pictureBox24.Visible = true;
+                            pictureBox28.Visible = true;
+                            pictureBox29.Visible = true;
+                            pictureBox30.Visible = true;
+                            pictureBox31.Visible = true;
+                            pictureBox32.Visible = true;
+                            pictureBox33.Visible = true;
                             switchWorkMode(2);
                             break;
                     }
@@ -190,6 +197,7 @@ namespace Asset_Editor
                 case 1:
                     tabControl1.Visible = true;
                     tabControl2.Visible = false;
+                    toolStrip1.Visible = true;
                     workMode = 1;
                     drawFace(tabControl1.SelectedIndex + 1);
 
@@ -207,16 +215,63 @@ namespace Asset_Editor
                     trackBar11.Value = face.eyeType;
                     trackBar10.Value = face.noseType;
                     trackBar9.Value = face.mouthType;
+
+                    trackBar27.Value = (face.headWidth - 350) / 10;
+                    trackBar28.Value = (face.headHeight - 380) / 10;
+                    trackBar26.Value = (face.eyeHeight - 40) / 5;
+                    trackBar25.Value = (int) Math.Round((face.eyeSize - 0.65f) / 0.05f);
+                    trackBar24.Value = face.eyeDist / 2;
+                    trackBar23.Value = (face.noseHeight - 20) / 3;
+                    trackBar22.Value = (int) Math.Round((face.noseSize - 0.65f) / 0.05f);
+                    trackBar21.Value = (face.mouthHeight + 70) / 3;
+                    trackBar20.Value = (int) Math.Round((face.mouthSize - 0.65f) / 0.05f);
+                    trackBar15.Value = face.headType;
+                    trackBar17.Value = face.hairType;
+                    trackBar19.Value = face.eyeType;
+                    trackBar18.Value = face.noseType;
+                    trackBar16.Value = face.mouthType;
+
+                    textBox10.Text = "" + face.headType;
+                    textBox11.Text = "" + face.hairType;
+                    textBox12.Text = "" + face.eyeType;
+                    textBox13.Text = "" + face.noseType;
+                    textBox14.Text = "" + face.mouthType;
+
+                    label45.Visible = false;
+                    label46.Visible = false;
+                    label47.Visible = false;
+                    label48.Visible = false;
+                    button5.Visible = false;
+                    button6.Visible = false;
+                    button7.Visible = false;
                     break;
                 case 2:
                     tabControl2.Visible = true;
                     tabControl1.Visible = false;
+                    toolStrip1.Visible = true;
                     workMode = 2;
+
+                    label45.Visible = false;
+                    label46.Visible = false;
+                    label47.Visible = false;
+                    label48.Visible = false;
+                    button5.Visible = false;
+                    button6.Visible = false;
+                    button7.Visible = false;
                     break;
                 default:
                     tabControl1.Visible = false;
                     tabControl2.Visible = false;
+                    toolStrip1.Visible = false;
                     workMode = 0;
+
+                    label45.Visible = true;
+                    label46.Visible = true;
+                    label47.Visible = true;
+                    label48.Visible = true;
+                    button5.Visible = true;
+                    button6.Visible = true;
+                    button7.Visible = true;
                     break;
             }
         }
@@ -286,72 +341,125 @@ namespace Asset_Editor
             {
                 face.headWidth = 350 + trackBar1.Value * 10;
                 trackBar27.Value = trackBar1.Value;
+                textBox1.Text = "" + face.headWidth;
 
                 face.headHeight = 380 + trackBar14.Value * 10;
                 trackBar28.Value = trackBar14.Value;
+                textBox2.Text = "" + face.headHeight;
 
                 face.eyeHeight = 40 + trackBar2.Value * 5;
                 trackBar26.Value = trackBar2.Value;
+                textBox3.Text = "" + face.eyeHeight;
 
                 face.eyeSize = 0.65f + trackBar3.Value * 0.05f;
                 trackBar25.Value = trackBar3.Value;
+                textBox4.Text = "" + face.eyeSize * 100;
 
                 face.eyeDist = 2 * trackBar4.Value;
                 trackBar24.Value = trackBar4.Value;
+                textBox5.Text = "" + face.eyeDist;
 
                 face.noseHeight = 20 + trackBar5.Value * 3;
                 trackBar23.Value = trackBar5.Value;
+                textBox6.Text = "" + face.noseHeight;
 
                 face.noseSize = 0.65f + trackBar6.Value * 0.05f;
                 trackBar22.Value = trackBar6.Value;
+                textBox7.Text = "" + face.noseSize * 100;
 
                 face.mouthHeight = trackBar7.Value * 3 - 70;
                 trackBar21.Value = trackBar7.Value;
+                textBox8.Text = "" + (face.mouthHeight + 140);
 
                 face.mouthSize = 0.65f + trackBar8.Value * 0.05f;
                 trackBar20.Value = trackBar8.Value;
+                textBox9.Text = "" + face.mouthSize * 100;
 
                 face.headType = trackBar13.Value;
                 trackBar15.Value = trackBar13.Value;
+                textBox10.Text = "" + face.headType;
 
                 face.hairType = trackBar12.Value;
                 trackBar17.Value = trackBar12.Value;
+                textBox11.Text = "" + face.hairType;
 
                 face.eyeType = trackBar11.Value;
                 trackBar19.Value = trackBar11.Value;
+                textBox12.Text = "" + face.eyeType;
 
                 face.noseType = trackBar10.Value;
                 trackBar18.Value = trackBar10.Value;
+                textBox13.Text = "" + face.noseType;
 
                 face.mouthType = trackBar9.Value;
                 trackBar16.Value = trackBar9.Value;
+                textBox14.Text = "" + face.mouthType;
                 drawFace(1);
             }
             else
             {
                 face.headWidth = 350 + trackBar27.Value * 10;
+                trackBar1.Value = trackBar27.Value;
+                textBox1.Text = "" + face.headWidth;
+
                 face.headHeight = 380 + trackBar28.Value * 10;
+                trackBar14.Value = trackBar28.Value;
+                textBox2.Text = "" + face.headHeight;
+
                 face.eyeHeight = 40 + trackBar26.Value * 5;
+                trackBar2.Value = trackBar26.Value;
+                textBox3.Text = "" + face.eyeHeight;
+
                 face.eyeSize = 0.65f + trackBar25.Value * 0.05f;
+                trackBar3.Value = trackBar25.Value;
+                textBox4.Text = "" + face.eyeSize * 100;
+
                 face.eyeDist = 2 * trackBar24.Value;
+                trackBar4.Value = trackBar24.Value;
+                textBox5.Text = "" + face.eyeDist;
+
                 face.noseHeight = 20 + trackBar23.Value * 3;
+                trackBar5.Value = trackBar23.Value;
+                textBox6.Text = "" + face.noseHeight;
+
                 face.noseSize = 0.65f + trackBar22.Value * 0.05f;
+                trackBar6.Value = trackBar22.Value;
+                textBox7.Text = "" + face.noseSize * 100;
+
                 face.mouthHeight = trackBar21.Value * 3 - 70;
+                trackBar7.Value = trackBar21.Value;
+                textBox8.Text = "" + (face.mouthHeight + 140);
+
                 face.mouthSize = 0.65f + trackBar20.Value * 0.05f;
+                trackBar8.Value = trackBar20.Value;
+                textBox9.Text = "" + face.mouthSize * 100;
+
                 face.headType = trackBar15.Value;
+                trackBar13.Value = trackBar15.Value;
+                textBox10.Text = "" + face.headType;
+
                 face.hairType = trackBar17.Value;
+                trackBar12.Value = trackBar17.Value;
+                textBox11.Text = "" + face.hairType;
+
                 face.eyeType = trackBar19.Value;
+                trackBar11.Value = trackBar19.Value;
+                textBox12.Text = "" + face.eyeType;
+
                 face.noseType = trackBar18.Value;
+                trackBar10.Value = trackBar18.Value;
+                textBox13.Text = "" + face.noseType;
+
                 face.mouthType = trackBar16.Value;
+                trackBar9.Value = trackBar16.Value;
+                textBox14.Text = "" + face.mouthType;
+
                 drawFace(2);
             }
         }
         #endregion
 
         #region geom editor
-        byte moveShape = 0;
-        Point lastMousePos;
-
         private void newGeom()
         {
             switchWorkMode(2);
@@ -359,32 +467,198 @@ namespace Asset_Editor
 
         #endregion
 
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        private void pictureBox17_Click(object sender, EventArgs e)
         {
-            if (moveShape == 1)
+            pictureBox17.Visible = false;
+            pictureBox26.Visible = true;
+            pictureBox23.Visible = true;
+            pictureBox18.Visible = true;
+            pictureBox27.Visible = true;
+            pictureBox25.Visible = true;
+            label29.Visible = true;
+            label30.Visible = true;
+            label31.Visible = true;
+            label32.Visible = true;
+            label33.Visible = true;
+            label34.Visible = true;
+            label35.Visible = true;
+            label36.Visible = true;
+            label37.Visible = true;
+            label38.Visible = true;
+            label39.Visible = true;
+            label40.Visible = true;
+            label41.Visible = true;
+            label42.Visible = true;
+            label43.Visible = true;
+            label44.Visible = true;
+            button1.Visible = true;
+            button2.Visible = true;
+            button3.Visible = true;
+            button4.Visible = true;
+            trackBar29.Visible = true;
+            trackBar30.Visible = true;
+            textBox15.Visible = true;
+            textBox16.Visible = true;
+            textBox17.Visible = true;
+            textBox18.Visible = true;
+            textBox19.Visible = true;
+            textBox20.Visible = true;
+        }
+
+        private void pictureBox18_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox25_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            cd.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            newFace();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            newGeom();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            toolStripButton3_Click(sender, e);
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
             {
-                Point p = this.PointToScreen(e.Location);
-                pictureBox5.SetBounds(pictureBox5.Left + p.X - lastMousePos.X, pictureBox5.Top + p.Y - lastMousePos.Y, pictureBox5.Width, pictureBox5.Height);
-                lastMousePos = p;
-                //label29.Text = "" + p;
-                //label29.Update();
-                pictureBox5.Update();
+                int f = 1;
+                if (int.TryParse(textBox1.Text, out f))
+                {
+
+                    face.headWidth = f;
+                    drawFace(2);
+                    trackBar1.Value = (Math.Min(Math.Max(350, f), 450) - 350) / 10;
+                    trackBar27.Value = (Math.Min(Math.Max(350, f), 450) - 350) / 10;
+                }
+
+                if (int.TryParse(textBox2.Text, out f))
+                {
+                    face.headHeight = f;
+                    drawFace(2);
+                    trackBar14.Value = (Math.Min(Math.Max(380, f), 480) - 380) / 10;
+                    trackBar28.Value = (Math.Min(Math.Max(380, f), 480) - 380) / 10;
+                }
+
+                if (int.TryParse(textBox3.Text, out f))
+                {
+                    face.eyeHeight = f;
+                    drawFace(2);
+                    trackBar2.Value = (Math.Min(Math.Max(40, f), 90) - 40) / 5;
+                    trackBar26.Value = (Math.Min(Math.Max(40, f), 90) - 40) / 5;
+                }
+
+                if (int.TryParse(textBox4.Text, out f))
+                {
+                    face.eyeSize = f * .01f;
+                    drawFace(2);
+                    trackBar3.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                    trackBar25.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                }
+
+                if (int.TryParse(textBox5.Text, out f))
+                {
+                    face.eyeDist = f;
+                    drawFace(2);
+                    trackBar4.Value = (Math.Min(Math.Max(0, f), 20) - 0) / 2;
+                    trackBar24.Value = (Math.Min(Math.Max(0, f), 20) - 0) / 2;
+                }
+
+                if (int.TryParse(textBox6.Text, out f))
+                {
+                    face.noseHeight = f;
+                    drawFace(2);
+                    trackBar5.Value = (Math.Min(Math.Max(20, f), 50) - 20) / 3;
+                    trackBar23.Value = (Math.Min(Math.Max(20, f), 50) - 20) / 3;
+                }
+
+                if (int.TryParse(textBox7.Text, out f))
+                {
+                    face.noseSize = f * .01f;
+                    drawFace(2);
+                    trackBar6.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                    trackBar22.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                }
+
+                if (int.TryParse(textBox8.Text, out f))
+                {
+                    face.mouthHeight = f-140;
+                    drawFace(2);
+                    trackBar7.Value = (Math.Min(Math.Max(-70, f-140), -40) + 70) / 3;
+                    trackBar21.Value = (Math.Min(Math.Max(-70, f-140), -40) + 70) / 3;
+                }
+
+                if (int.TryParse(textBox9.Text, out f))
+                {
+                    face.mouthSize = f * .01f;
+                    drawFace(2);
+                    trackBar8.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                    trackBar20.Value = (Math.Min(Math.Max(65, f), 115) - 65) / 5;
+                }
+
+                if (int.TryParse(textBox10.Text, out f))
+                {
+                    f = Math.Min(Math.Max(0, f), 2);
+                    face.headType = f;
+                    drawFace(2);
+                    trackBar13.Value = f;
+                    trackBar15.Value = f;
+                    textBox10.Text = "" + f;
+                }
+
+                if (int.TryParse(textBox11.Text, out f))
+                {
+                    f = Math.Min(Math.Max(0, f), 2);
+                    face.hairType = f;
+                    drawFace(2);
+                    trackBar12.Value = f;
+                    trackBar17.Value = f;
+                    textBox11.Text = "" + f;
+                }
+
+                if (int.TryParse(textBox12.Text, out f))
+                {
+                    f = Math.Min(Math.Max(0, f), 2);
+                    face.eyeType = f;
+                    drawFace(2);
+                    trackBar11.Value = f;
+                    trackBar19.Value = f;
+                    textBox12.Text = "" + f;
+                }
+
+                if (int.TryParse(textBox13.Text, out f))
+                {
+                    f = Math.Min(Math.Max(0, f), 2);
+                    face.noseType = f;
+                    drawFace(2);
+                    trackBar10.Value = f;
+                    trackBar18.Value = f;
+                    textBox13.Text = "" + f;
+                }
+
+                if (int.TryParse(textBox14.Text, out f))
+                {
+                    f = Math.Min(Math.Max(0, f), 2);
+                    face.mouthType = f;
+                    drawFace(2);
+                    trackBar9.Value = f;
+                    trackBar16.Value = f;
+                    textBox14.Text = "" + f;
+                }
             }
         }
-
-        private void tabPage3_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (pictureBox5.Bounds.Contains(e.Location))
-            {
-                moveShape = 1;
-            }
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                label29.Text = "yo";
-        }
-
     }
 }
