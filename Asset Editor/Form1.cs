@@ -353,7 +353,7 @@ namespace Asset_Editor
 
                 face.eyeSize = 0.65f + trackBar3.Value * 0.05f;
                 trackBar25.Value = trackBar3.Value;
-                textBox4.Text = "" + face.eyeSize * 100;
+                textBox4.Text = "" + Math.Round(face.eyeSize * 100);
 
                 face.eyeDist = 2 * trackBar4.Value;
                 trackBar24.Value = trackBar4.Value;
@@ -365,7 +365,7 @@ namespace Asset_Editor
 
                 face.noseSize = 0.65f + trackBar6.Value * 0.05f;
                 trackBar22.Value = trackBar6.Value;
-                textBox7.Text = "" + face.noseSize * 100;
+                textBox7.Text = "" + Math.Round(face.noseSize * 100);
 
                 face.mouthHeight = trackBar7.Value * 3 - 70;
                 trackBar21.Value = trackBar7.Value;
@@ -373,7 +373,7 @@ namespace Asset_Editor
 
                 face.mouthSize = 0.65f + trackBar8.Value * 0.05f;
                 trackBar20.Value = trackBar8.Value;
-                textBox9.Text = "" + face.mouthSize * 100;
+                textBox9.Text = "" + Math.Round(face.mouthSize * 100);
 
                 face.headType = trackBar13.Value;
                 trackBar15.Value = trackBar13.Value;
@@ -412,7 +412,7 @@ namespace Asset_Editor
 
                 face.eyeSize = 0.65f + trackBar25.Value * 0.05f;
                 trackBar3.Value = trackBar25.Value;
-                textBox4.Text = "" + face.eyeSize * 100;
+                textBox4.Text = "" + Math.Round(face.eyeSize * 100);
 
                 face.eyeDist = 2 * trackBar24.Value;
                 trackBar4.Value = trackBar24.Value;
@@ -424,7 +424,7 @@ namespace Asset_Editor
 
                 face.noseSize = 0.65f + trackBar22.Value * 0.05f;
                 trackBar6.Value = trackBar22.Value;
-                textBox7.Text = "" + face.noseSize * 100;
+                textBox7.Text = "" + Math.Round(face.noseSize * 100);
 
                 face.mouthHeight = trackBar21.Value * 3 - 70;
                 trackBar7.Value = trackBar21.Value;
@@ -432,7 +432,7 @@ namespace Asset_Editor
 
                 face.mouthSize = 0.65f + trackBar20.Value * 0.05f;
                 trackBar8.Value = trackBar20.Value;
-                textBox9.Text = "" + face.mouthSize * 100;
+                textBox9.Text = "" + Math.Round(face.mouthSize * 100);
 
                 face.headType = trackBar15.Value;
                 trackBar13.Value = trackBar15.Value;
