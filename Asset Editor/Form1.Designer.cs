@@ -68,6 +68,38 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.trackBar14 = new System.Windows.Forms.TrackBar();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.trackBar15 = new System.Windows.Forms.TrackBar();
+            this.trackBar16 = new System.Windows.Forms.TrackBar();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.trackBar17 = new System.Windows.Forms.TrackBar();
+            this.trackBar18 = new System.Windows.Forms.TrackBar();
+            this.trackBar19 = new System.Windows.Forms.TrackBar();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.trackBar20 = new System.Windows.Forms.TrackBar();
+            this.label22 = new System.Windows.Forms.Label();
+            this.trackBar21 = new System.Windows.Forms.TrackBar();
+            this.label23 = new System.Windows.Forms.Label();
+            this.trackBar22 = new System.Windows.Forms.TrackBar();
+            this.label24 = new System.Windows.Forms.Label();
+            this.trackBar23 = new System.Windows.Forms.TrackBar();
+            this.label25 = new System.Windows.Forms.Label();
+            this.trackBar24 = new System.Windows.Forms.TrackBar();
+            this.label26 = new System.Windows.Forms.Label();
+            this.trackBar25 = new System.Windows.Forms.TrackBar();
+            this.label27 = new System.Windows.Forms.Label();
+            this.trackBar26 = new System.Windows.Forms.TrackBar();
+            this.label28 = new System.Windows.Forms.Label();
+            this.trackBar27 = new System.Windows.Forms.TrackBar();
+            this.trackBar28 = new System.Windows.Forms.TrackBar();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -97,6 +129,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar14)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar19)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar28)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -144,6 +194,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -153,6 +204,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // tabControl1
             // 
@@ -164,6 +216,7 @@
             this.tabControl1.Size = new System.Drawing.Size(984, 632);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.Visible = false;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -237,25 +290,25 @@
             // 
             this.trackBar13.AccessibleName = "";
             this.trackBar13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.trackBar13.LargeChange = 2;
+            this.trackBar13.LargeChange = 1;
             this.trackBar13.Location = new System.Drawing.Point(6, 42);
             this.trackBar13.Maximum = 2;
             this.trackBar13.Name = "trackBar13";
             this.trackBar13.Size = new System.Drawing.Size(188, 45);
             this.trackBar13.TabIndex = 19;
-            this.trackBar13.Scroll += new System.EventHandler(this.trackBar13_Scroll);
+            this.trackBar13.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // trackBar9
             // 
             this.trackBar9.AccessibleName = "";
             this.trackBar9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.trackBar9.LargeChange = 2;
+            this.trackBar9.LargeChange = 1;
             this.trackBar9.Location = new System.Drawing.Point(6, 246);
             this.trackBar9.Maximum = 2;
             this.trackBar9.Name = "trackBar9";
             this.trackBar9.Size = new System.Drawing.Size(188, 45);
             this.trackBar9.TabIndex = 26;
-            this.trackBar9.Scroll += new System.EventHandler(this.trackBar9_Scroll);
+            this.trackBar9.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label13
             // 
@@ -279,37 +332,37 @@
             // 
             this.trackBar12.AccessibleName = "";
             this.trackBar12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.trackBar12.LargeChange = 2;
+            this.trackBar12.LargeChange = 1;
             this.trackBar12.Location = new System.Drawing.Point(6, 93);
             this.trackBar12.Maximum = 2;
             this.trackBar12.Name = "trackBar12";
             this.trackBar12.Size = new System.Drawing.Size(188, 45);
             this.trackBar12.TabIndex = 20;
-            this.trackBar12.Scroll += new System.EventHandler(this.trackBar12_Scroll);
+            this.trackBar12.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // trackBar10
             // 
             this.trackBar10.AccessibleName = "";
             this.trackBar10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.trackBar10.LargeChange = 2;
+            this.trackBar10.LargeChange = 1;
             this.trackBar10.Location = new System.Drawing.Point(6, 195);
             this.trackBar10.Maximum = 2;
             this.trackBar10.Name = "trackBar10";
             this.trackBar10.Size = new System.Drawing.Size(188, 45);
             this.trackBar10.TabIndex = 24;
-            this.trackBar10.Scroll += new System.EventHandler(this.trackBar10_Scroll);
+            this.trackBar10.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // trackBar11
             // 
             this.trackBar11.AccessibleName = "";
             this.trackBar11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.trackBar11.LargeChange = 2;
+            this.trackBar11.LargeChange = 1;
             this.trackBar11.Location = new System.Drawing.Point(6, 144);
             this.trackBar11.Maximum = 2;
             this.trackBar11.Name = "trackBar11";
             this.trackBar11.Size = new System.Drawing.Size(188, 45);
             this.trackBar11.TabIndex = 22;
-            this.trackBar11.Scroll += new System.EventHandler(this.trackBar11_Scroll);
+            this.trackBar11.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // groupBox1
             // 
@@ -366,7 +419,7 @@
             this.trackBar8.Size = new System.Drawing.Size(188, 45);
             this.trackBar8.TabIndex = 16;
             this.trackBar8.Value = 5;
-            this.trackBar8.Scroll += new System.EventHandler(this.trackBar8_Scroll);
+            this.trackBar8.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label7
             // 
@@ -387,7 +440,7 @@
             this.trackBar7.Size = new System.Drawing.Size(188, 45);
             this.trackBar7.TabIndex = 14;
             this.trackBar7.Value = 5;
-            this.trackBar7.Scroll += new System.EventHandler(this.trackBar7_Scroll);
+            this.trackBar7.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label6
             // 
@@ -408,7 +461,7 @@
             this.trackBar6.Size = new System.Drawing.Size(188, 45);
             this.trackBar6.TabIndex = 12;
             this.trackBar6.Value = 5;
-            this.trackBar6.Scroll += new System.EventHandler(this.trackBar6_Scroll);
+            this.trackBar6.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label5
             // 
@@ -429,7 +482,7 @@
             this.trackBar5.Size = new System.Drawing.Size(188, 45);
             this.trackBar5.TabIndex = 10;
             this.trackBar5.Value = 5;
-            this.trackBar5.Scroll += new System.EventHandler(this.trackBar5_Scroll);
+            this.trackBar5.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label4
             // 
@@ -449,7 +502,7 @@
             this.trackBar4.Size = new System.Drawing.Size(188, 45);
             this.trackBar4.TabIndex = 8;
             this.trackBar4.Value = 5;
-            this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
+            this.trackBar4.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label3
             // 
@@ -469,7 +522,7 @@
             this.trackBar3.Size = new System.Drawing.Size(188, 45);
             this.trackBar3.TabIndex = 6;
             this.trackBar3.Value = 5;
-            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            this.trackBar3.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label2
             // 
@@ -490,7 +543,7 @@
             this.trackBar2.Size = new System.Drawing.Size(188, 45);
             this.trackBar2.TabIndex = 4;
             this.trackBar2.Value = 5;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            this.trackBar2.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // label1
             // 
@@ -511,7 +564,7 @@
             this.trackBar1.Size = new System.Drawing.Size(188, 45);
             this.trackBar1.TabIndex = 3;
             this.trackBar1.Value = 5;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBar1.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // trackBar14
             // 
@@ -523,16 +576,363 @@
             this.trackBar14.Size = new System.Drawing.Size(188, 45);
             this.trackBar14.TabIndex = 18;
             this.trackBar14.Value = 5;
-            this.trackBar14.Scroll += new System.EventHandler(this.trackBar14_Scroll);
+            this.trackBar14.Scroll += new System.EventHandler(this.updateFaceFromTrackBars);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(976, 606);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "DevView";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(212, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(552, 589);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.trackBar15);
+            this.groupBox3.Controls.Add(this.trackBar16);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.trackBar17);
+            this.groupBox3.Controls.Add(this.trackBar18);
+            this.groupBox3.Controls.Add(this.trackBar19);
+            this.groupBox3.Location = new System.Drawing.Point(770, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 596);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Shapes";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 128);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 13);
+            this.label15.TabIndex = 23;
+            this.label15.Text = "Eye Type";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 77);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 13);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Hair Type";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 230);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(64, 13);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "Mouth Type";
+            // 
+            // trackBar15
+            // 
+            this.trackBar15.AccessibleName = "";
+            this.trackBar15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar15.LargeChange = 1;
+            this.trackBar15.Location = new System.Drawing.Point(6, 42);
+            this.trackBar15.Maximum = 2;
+            this.trackBar15.Name = "trackBar15";
+            this.trackBar15.Size = new System.Drawing.Size(188, 45);
+            this.trackBar15.TabIndex = 19;
+            // 
+            // trackBar16
+            // 
+            this.trackBar16.AccessibleName = "";
+            this.trackBar16.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar16.LargeChange = 1;
+            this.trackBar16.Location = new System.Drawing.Point(6, 246);
+            this.trackBar16.Maximum = 2;
+            this.trackBar16.Name = "trackBar16";
+            this.trackBar16.Size = new System.Drawing.Size(188, 45);
+            this.trackBar16.TabIndex = 26;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 26);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(60, 13);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Head Type";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 179);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(59, 13);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "Nose Type";
+            // 
+            // trackBar17
+            // 
+            this.trackBar17.AccessibleName = "";
+            this.trackBar17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar17.LargeChange = 1;
+            this.trackBar17.Location = new System.Drawing.Point(6, 93);
+            this.trackBar17.Maximum = 2;
+            this.trackBar17.Name = "trackBar17";
+            this.trackBar17.Size = new System.Drawing.Size(188, 45);
+            this.trackBar17.TabIndex = 20;
+            // 
+            // trackBar18
+            // 
+            this.trackBar18.AccessibleName = "";
+            this.trackBar18.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar18.LargeChange = 1;
+            this.trackBar18.Location = new System.Drawing.Point(6, 195);
+            this.trackBar18.Maximum = 2;
+            this.trackBar18.Name = "trackBar18";
+            this.trackBar18.Size = new System.Drawing.Size(188, 45);
+            this.trackBar18.TabIndex = 24;
+            // 
+            // trackBar19
+            // 
+            this.trackBar19.AccessibleName = "";
+            this.trackBar19.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar19.LargeChange = 1;
+            this.trackBar19.Location = new System.Drawing.Point(6, 144);
+            this.trackBar19.Maximum = 2;
+            this.trackBar19.Name = "trackBar19";
+            this.trackBar19.Size = new System.Drawing.Size(188, 45);
+            this.trackBar19.TabIndex = 22;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.maskedTextBox1);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.trackBar20);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.trackBar21);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.trackBar22);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.trackBar23);
+            this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.trackBar24);
+            this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Controls.Add(this.trackBar25);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Controls.Add(this.trackBar26);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Controls.Add(this.trackBar27);
+            this.groupBox4.Controls.Add(this.trackBar28);
+            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 596);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Parameters";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(145, 19);
+            this.maskedTextBox1.Mask = "##";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PromptChar = ' ';
+            this.maskedTextBox1.Size = new System.Drawing.Size(49, 20);
+            this.maskedTextBox1.TabIndex = 6;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 77);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(67, 13);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "Head Height";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 434);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(60, 13);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "Mouth Size";
+            // 
+            // trackBar20
+            // 
+            this.trackBar20.AccessibleName = "";
+            this.trackBar20.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar20.LargeChange = 2;
+            this.trackBar20.Location = new System.Drawing.Point(6, 450);
+            this.trackBar20.Name = "trackBar20";
+            this.trackBar20.Size = new System.Drawing.Size(188, 45);
+            this.trackBar20.TabIndex = 16;
+            this.trackBar20.Value = 5;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 383);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(71, 13);
+            this.label22.TabIndex = 15;
+            this.label22.Text = "Mouth Height";
+            // 
+            // trackBar21
+            // 
+            this.trackBar21.AccessibleName = "";
+            this.trackBar21.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar21.LargeChange = 2;
+            this.trackBar21.Location = new System.Drawing.Point(6, 399);
+            this.trackBar21.Name = "trackBar21";
+            this.trackBar21.Size = new System.Drawing.Size(188, 45);
+            this.trackBar21.TabIndex = 14;
+            this.trackBar21.Value = 5;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 332);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(55, 13);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "Nose Size";
+            // 
+            // trackBar22
+            // 
+            this.trackBar22.AccessibleName = "";
+            this.trackBar22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar22.LargeChange = 2;
+            this.trackBar22.Location = new System.Drawing.Point(6, 348);
+            this.trackBar22.Name = "trackBar22";
+            this.trackBar22.Size = new System.Drawing.Size(188, 45);
+            this.trackBar22.TabIndex = 12;
+            this.trackBar22.Value = 5;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 281);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 13);
+            this.label24.TabIndex = 11;
+            this.label24.Text = "Nose Height";
+            // 
+            // trackBar23
+            // 
+            this.trackBar23.AccessibleName = "";
+            this.trackBar23.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar23.LargeChange = 2;
+            this.trackBar23.Location = new System.Drawing.Point(6, 297);
+            this.trackBar23.Name = "trackBar23";
+            this.trackBar23.Size = new System.Drawing.Size(188, 45);
+            this.trackBar23.TabIndex = 10;
+            this.trackBar23.Value = 5;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 230);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(70, 13);
+            this.label25.TabIndex = 9;
+            this.label25.Text = "Eye Distance";
+            // 
+            // trackBar24
+            // 
+            this.trackBar24.AccessibleName = "";
+            this.trackBar24.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar24.Location = new System.Drawing.Point(6, 246);
+            this.trackBar24.Name = "trackBar24";
+            this.trackBar24.Size = new System.Drawing.Size(188, 45);
+            this.trackBar24.TabIndex = 8;
+            this.trackBar24.Value = 5;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 179);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(48, 13);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Eye Size";
+            // 
+            // trackBar25
+            // 
+            this.trackBar25.AccessibleName = "";
+            this.trackBar25.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar25.Location = new System.Drawing.Point(6, 195);
+            this.trackBar25.Name = "trackBar25";
+            this.trackBar25.Size = new System.Drawing.Size(188, 45);
+            this.trackBar25.TabIndex = 6;
+            this.trackBar25.Value = 5;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 128);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(59, 13);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Eye Height";
+            // 
+            // trackBar26
+            // 
+            this.trackBar26.AccessibleName = "";
+            this.trackBar26.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar26.LargeChange = 2;
+            this.trackBar26.Location = new System.Drawing.Point(6, 144);
+            this.trackBar26.Name = "trackBar26";
+            this.trackBar26.Size = new System.Drawing.Size(188, 45);
+            this.trackBar26.TabIndex = 4;
+            this.trackBar26.Value = 5;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 26);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(64, 13);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Head Width";
+            // 
+            // trackBar27
+            // 
+            this.trackBar27.AccessibleName = "";
+            this.trackBar27.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar27.LargeChange = 2;
+            this.trackBar27.Location = new System.Drawing.Point(6, 42);
+            this.trackBar27.Name = "trackBar27";
+            this.trackBar27.Size = new System.Drawing.Size(188, 45);
+            this.trackBar27.TabIndex = 3;
+            this.trackBar27.Value = 5;
+            this.trackBar27.Scroll += new System.EventHandler(this.trackBar27_Scroll);
+            // 
+            // trackBar28
+            // 
+            this.trackBar28.AccessibleName = "";
+            this.trackBar28.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.trackBar28.LargeChange = 2;
+            this.trackBar28.Location = new System.Drawing.Point(6, 93);
+            this.trackBar28.Name = "trackBar28";
+            this.trackBar28.Size = new System.Drawing.Size(188, 45);
+            this.trackBar28.TabIndex = 18;
+            this.trackBar28.Value = 5;
             // 
             // tabControl2
             // 
@@ -658,6 +1058,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar14)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar19)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar28)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -718,6 +1138,38 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TrackBar trackBar14;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TrackBar trackBar15;
+        private System.Windows.Forms.TrackBar trackBar16;
+        private System.Windows.Forms.TrackBar trackBar17;
+        private System.Windows.Forms.TrackBar trackBar18;
+        private System.Windows.Forms.TrackBar trackBar19;
+        private System.Windows.Forms.TrackBar trackBar20;
+        private System.Windows.Forms.TrackBar trackBar21;
+        private System.Windows.Forms.TrackBar trackBar22;
+        private System.Windows.Forms.TrackBar trackBar23;
+        private System.Windows.Forms.TrackBar trackBar24;
+        private System.Windows.Forms.TrackBar trackBar25;
+        private System.Windows.Forms.TrackBar trackBar26;
+        private System.Windows.Forms.TrackBar trackBar27;
+        private System.Windows.Forms.TrackBar trackBar28;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
 

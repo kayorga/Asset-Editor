@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Asset_Editor
 {
+    [Serializable()]
     class Face
     {
         /*private ShapeObject head;
@@ -16,12 +18,12 @@ namespace Asset_Editor
 
         //parameters
         public int eyeHeight = 65;
-        public int eyeDist = 8;
-        public float eyeSize = 1.0f;
-        public int noseHeight = 55;
-        public float noseSize = 1.0f;
-        public int mouthHeight;
-        public float mouthSize = 1.0f;
+        public int eyeDist = 10;
+        public float eyeSize = 0.9f;
+        public int noseHeight = 35;
+        public float noseSize = 0.9f;
+        public int mouthHeight = -55;
+        public float mouthSize = 0.9f;
         public int headWidth = 400;
         public int headHeight = 430;
         
@@ -36,6 +38,48 @@ namespace Asset_Editor
         {
         }
 
+        public Face(SerializationInfo info, StreamingContext ctxt)
+        {
+            eyeType = (int)info.GetValue("eType", typeof(int));
+            noseType = (int)info.GetValue("nType", typeof(int));
+            mouthType = (int)info.GetValue("mType", typeof(int));
+            headType = (int)info.GetValue("heType", typeof(int));
+            hairType = (int)info.GetValue("haType", typeof(int));
+
+            eyeHeight = (int)info.GetValue("eHeight", typeof(int));
+            eyeDist = (int)info.GetValue("eDist", typeof(int));
+            noseHeight = (int)info.GetValue("nHeight", typeof(int));
+            mouthHeight = (int)info.GetValue("mHeight", typeof(int));
+
+            eyeSize = (float)info.GetValue("eSize", typeof(float));
+            noseSize = (float)info.GetValue("nSize", typeof(float));
+            mouthSize = (float)info.GetValue("mSize", typeof(float));
+
+            headWidth = (int)info.GetValue("hWidth", typeof(int));
+            headHeight = (int)info.GetValue("hHeight", typeof(int));
+        }
+
+        public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
+        {
+            info.AddValue("eType", eyeType);
+            info.AddValue("nType", noseType);
+            info.AddValue("mType", mouthType);
+            info.AddValue("heType", headType);
+            info.AddValue("haType", hairType);
+
+            info.AddValue("eHeight", eyeHeight);
+            info.AddValue("eDist", eyeDist);
+            info.AddValue("nHeight", noseHeight);
+            info.AddValue("mHeight", mouthHeight);
+
+            info.AddValue("eSize", eyeSize);
+            info.AddValue("nSize", noseSize);
+            info.AddValue("mSize", mouthSize);
+
+            info.AddValue("hWidth", headWidth);
+            info.AddValue("hHeight", headHeight);
+        }
+
         public void init()
         {
             Random ran = new Random();
@@ -45,12 +89,12 @@ namespace Asset_Editor
             headType = ran.Next(0, 3);
             hairType = ran.Next(0, 3);
             eyeHeight = 65;
-            eyeDist = 8;
-            eyeSize = 1.0f;
-            noseHeight = 55;
-            noseSize = 1.0f;
+            eyeDist = 10;
+            eyeSize = 0.9f;
+            noseHeight = 35;
+            noseSize = 0.9f;
             mouthHeight = -55;
-            mouthSize = 1.0f;
+            mouthSize = 0.9f;
             headWidth = 400;
             headHeight = 430;
         }
